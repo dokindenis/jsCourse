@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        //Задание 1.
+        //пример 1
+        let a = 1, b = 1, c, d;
+        c = ++a;
+        alert(c); // ответ: 2
+        //Переменная "c" изначально не определена. Переменная "a" равняется числу "1".
+        //Префиксный инктеремент увеличивает число на еденицу, то есть 1 увеличиваем на еденицу получаем число "2".
+        //Затем мы присваиваем полученное число в переменную "c" и выводим на экран.
+
+        //пример 2
+        d = b++;
+        alert(d); //ответ: 1
+        //Переменная "b" равняется числу "1".
+        //Два плюса так же увеливают число на еденицу, НО уже после того как оно присвоено переменной "d".
+
+        // //пример 3
+        c = 2 + ++a;
+        alert(c); //ответ: 5
+        //К текущему моменту переменная "a" равняется числу "2". Увелечив ее значение еще на еденицу получим число "3".
+        //Сложив числа "3" и "2" мы получим число "5".
+
+        //пример 4
+        d = 2 + b++;
+        alert(d); //ответ: 4
+        //К этому моменту переменная "b" равняется числу "2", но увелечится еще на один после того как переменной "d" присвоется число "4".
+        alert(a); //3
+        //Переменная "a" равна числу "3" исходя из результата примера 3.
+        alert(b); //3
+        //К этому моменту переменная "b" равнявшееся числу "2" уже увеличилось на еденицу и стало равно числу "3".
+
+
+        //Задание 2.
+        let a = 2;
+        let x = 1 + (a *= 2);
+        //Переменная "a" равняется числу "2".
+        //Далее выполняется условие в скобках. Присваивание с умноежением. "2" умножить на "2" равно "4", плюс "1" равняется "5".
+        //Ответ: 5
+
+        //Задание 3.
+        let a = 2, b = 7;
+        if ((a >= 0) && (b >= 0)) {
+            console.log(a - b);
+        } else if ((a < 0) && (b < 0)) {
+            console.log(a + b);
+        };
+
+        //Задание 4.
+        function summ(a, b) {
+            return console.log(a + b);
+        }
+
+        function sub(a, b) {
+            return console.log(a - b);
+        }
+
+        function multiply(a, b) {
+            return console.log(a * b);
+        }
+
+        function division(a, b) {
+            return console.log(a / b);
+        }
+
+        //Задание 5.
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return summ(arg1, arg2);
+                case "-":
+                    return sub(arg1, arg2);
+                case "*":
+                    return multiply(arg1, arg2);
+                case "/":
+                    return division(arg1, arg2);
+                default:
+                    throw new Error("В данной программе нет такого функционала.");
+            }
+        }
+
+        console.log(mathOperation(2, 7, "+"));
+        console.log(mathOperation(2, 7, "-"));
+        console.log(mathOperation(2, 7, "/"));
+        console.log(mathOperation(2, 7, "*"));
+        console.log(mathOperation(2, 7, "%"));
+    </script>
+</body>
+
+</html>
